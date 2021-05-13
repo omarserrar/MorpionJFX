@@ -1,0 +1,67 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.selectionButton {
+    -fx-background-color: linear-gradient(#00ffda , dodgerblue);
+        
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    
+    -fx-border-width: 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 6;
+    -fx-border-color: #3c808d;
+    -fx-cursor: hand;
+}
+.selected{
+	-fx-background-color: 
+		linear-gradient(#ffb133, #f57274);
+	-fx-border-color:#ca7d00;
+}
+.menubutton{
+	-fx-background-color: #ffb133;
+	-fx-text-fill: #FFFFFF;
+	-fx-effect: null;
+	-fx-cursor: hand;
+}
+.text-error{
+	-fx-border-color:red;
+	-fx-background-color: #ffeeee;
+	-fx-prompt-text-fill: red;
+}
+.play{
+	-fx-background-image: url("./assets/img/play.png");
+	-fx-background-size: 200 200;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: #ffffff00;
+	-fx-cursor: hand;
+}
+.help{
+	-fx-background-image: url("./assets/img/help.png");
+	-fx-background-size: 50 50;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: #ffffff00;
+}
+/* .play:hover {
+  -fx-background-color:#dae7f3;
+  -fx-background-size: 220 220;
+  -fx-background-repeat: no-repeat;
+	-fx-background-color: #ffffff00;
+}*/
+.background{
+	-fx-background-image: url('./assets/img/back2.jpg');
+	-fx-background-repeat: stretch;   
+    -fx-background-size: 655 655;
+    -fx-background-position: center center;
+}
+.background-white{
+	-fx-background-color: #ffffff50;
+}
+.separator{
+	-fx-background-color: linear-gradient(#3385ff, #f6b72a);
+	
+}
+Button{
+	-fx-cursor: hand;
+}

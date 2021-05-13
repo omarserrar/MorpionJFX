@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="60.0" prefWidth="655.0" style="-fx-background-color: #ffffff80;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controllers.BackroundLearnController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <HBox prefHeight="27.0" prefWidth="655.0">
+      <children>
+        <ProgressBar fx:id="progressBar" prefHeight="23.0" prefWidth="655.0" progress="0.0" />
+      </children>
+    </HBox>
+    <HBox minHeight="26.0" prefHeight="26.0" prefWidth="655.0">
+      <children>
+        <Text fx:id="pourcentage" strokeType="OUTSIDE" strokeWidth="0.0" text="100 %">
+          <font>
+            <Font name="Segoe UI Semibold" size="15.0" fx:id="x2" />
+          </font>
+          <HBox.margin>
+            <Insets right="20.0" fx:id="x1" />
+          </HBox.margin>
+        </Text>
+        <Text fx:id="partieJoueesText" font="$x2" strokeType="OUTSIDE" strokeWidth="0.0" text="5000000 / 500000" HBox.margin="$x1" />
+        <Text font="$x2" strokeType="OUTSIDE" strokeWidth="0.0" text="Intelligence: " />
+        <Text fx:id="intelligence" font="$x2" strokeType="OUTSIDE" strokeWidth="0.0" text="99.99%" HBox.margin="$x1" />
+        <Button fx:id="saveButton" font="$x2" minHeight="23.0" mnemonicParsing="false" onAction="#stopAndSaveLearning" prefHeight="27.0" styleClass="menubutton" text="Enregistrer et Arreter" HBox.margin="$x1" />
+        <Button fx:id="stopButton" font="$x2" mnemonicParsing="false" onAction="#stopLearning" prefHeight="33.0" style="-fx-background-color: red;&#10;" styleClass="menubutton" text="Annuler" />
+      </children>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@../application.css" />
+  </stylesheets>
+</VBox>

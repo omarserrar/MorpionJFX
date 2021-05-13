@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="528.0" prefWidth="655.0" styleClass="background-white" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controllers.LearningController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Text layoutX="51.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apprentissage en cours: ">
+      <font>
+        <Font name="Segoe UI Semibold" size="15.0" fx:id="x1" />
+      </font>
+    </Text>
+    <ProgressBar fx:id="progressBar" layoutX="51.0" layoutY="246.0" prefHeight="21.0" prefWidth="575.0" progress="0.0" />
+    <Text fx:id="partieJouees" font="$x1" layoutX="229.0" layoutY="235.0" scaleX="1.0" scaleY="1.0525697503671072" strokeType="OUTSIDE" strokeWidth="0.0" text=" / " />
+    <Button fx:id="saveButton" font="$x1" layoutX="44.0" layoutY="461.0" mnemonicParsing="false" onAction="#stopAndSaveLearning" styleClass="menubutton" text="Enregistrer et arreter" />
+    <Button fx:id="stopLearning" font="$x1" layoutY="461.0" mnemonicParsing="false" onAction="#stopLearning" style="-fx-background-color: red;" styleClass="menubutton" text="Annuler" AnchorPane.rightAnchor="107.0" />
+    <Text font="$x1" layoutX="51.0" layoutY="322.0" scaleX="1.0" scaleY="1.0525697503671072" strokeType="OUTSIDE" strokeWidth="0.0" text="Niveau Intelligence:" />
+    <Text fx:id="intelligence" font="$x1" layoutX="240.0" layoutY="322.0" scaleX="1.0" scaleY="1.0525697503671072" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+    <Text font="$x1" layoutX="51.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Learning Rate:" />
+    <Text id="learningRate" fx:id="learningRateText" layoutX="240.0" layoutY="134.0" scaleX="1.0" scaleY="1.0525697503671072" strokeType="OUTSIDE" strokeWidth="0.0" text="">
+      <font>
+        <Font name="System Bold" size="15.0" fx:id="x2" />
+      </font>
+    </Text>
+    <Text font="$x1" layoutX="51.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de hidden layer:" />
+    <Text fx:id="nbHiddenLayer" font="$x2" layoutX="240.0" layoutY="170.0" scaleX="1.3901127026851525" scaleY="1.0525697503671072" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+    <Text font="$x1" layoutX="51.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hidden Layer:" />
+    <Text fx:id="hiddenLayer" font="$x1" layoutX="240.0" layoutY="198.0" scaleX="1.263876997225176" scaleY="1.0525697503671072" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+    <Button fx:id="apprendreEnArrierePlan" font="$x1" layoutX="229.0" layoutY="461.0" mnemonicParsing="false" onAction="#backGroundLearn" styleClass="menubutton" text="Apprendre en arrière plan" />
+    <Text fx:id="pourcentage" font="$x1" layoutX="356.0" layoutY="235.0" scaleX="1.0" scaleY="1.0525697503671072" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+    <Text fx:id="successText" fill="#009918" font="$x1" layoutX="51.0" layoutY="404.0" scaleX="0.9999963860950268" scaleY="0.9999949877632202" strokeType="OUTSIDE" strokeWidth="0.0" text="Apprentissage Terminé: Enregistré la difficulté" visible="false" />
+    <ImageView fitHeight="76.2634506225586" fitWidth="161.20359184265882" layoutX="49.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../assets/img/difficultee.png" />
+      </image>
+    </ImageView>
+    <ImageView id="facile" fx:id="moyenneImg" fitHeight="60.24052047729492" fitWidth="121.18767825863337" layoutX="247.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <image>
+        <Image url="@../assets/img/moyenne.png" />
+      </image>
+    </ImageView>
+    <ImageView id="facile" fx:id="facileImg" fitHeight="64.46648406982422" fitWidth="87.75911784540921" layoutX="243.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <image>
+        <Image url="@../assets/img/facile.png" />
+      </image>
+    </ImageView>
+  </children>
+  <stylesheets>
+    <URL value="@../application.css" />
+  </stylesheets>
+</AnchorPane>

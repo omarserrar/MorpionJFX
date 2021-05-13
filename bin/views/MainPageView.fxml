@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="528.0" prefWidth="655.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controllers.MainPageController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Button fx:id="modifierDifficulteButton" layoutX="216.0" layoutY="435.0" mnemonicParsing="false" onAction="#learn" prefHeight="47.0" prefWidth="227.0" style="" styleClass="menubutton" text="Modifier Les Difficultés">
+      <font>
+        <Font name="Segoe UI Semibold" size="15.0" />
+      </font>
+    </Button>
+    <Button fx:id="jouerButton" layoutX="219.0" layoutY="177.0" mnemonicParsing="false" onAction="#newGame" prefHeight="220.0" prefWidth="220.0" style="" styleClass="play" text="" />
+    <ImageView fitHeight="139.15801533213224" fitWidth="354.2930908203125" layoutX="150.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../assets/img/logo.png" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" />
+  </children>
+  <stylesheets>
+    <URL value="@../application.css" />
+  </stylesheets>
+</AnchorPane>

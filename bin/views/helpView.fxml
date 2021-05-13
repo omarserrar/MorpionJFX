@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" styleClass="background-white, background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controllers.HelpController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <VBox layoutX="0.0" layoutY="0.0" prefHeight="500.0" prefWidth="500.0">
+      <children>
+        <ImageView fitHeight="51.0" fitWidth="80.30498504638672" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@../assets/img/aide.png" />
+          </image>
+        </ImageView>
+        <ScrollPane maxWidth="500.0" opacity="1.0" prefHeight="449.0" prefWidth="500.0" styleClass="background-white">
+          <content>
+            <AnchorPane id="Content" maxHeight="-1.0" maxWidth="500.0" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="500.0">
+              <children>
+                <Label fx:id="aideText" layoutX="9.0" layoutY="7.0" maxWidth="500.0" prefWidth="476.0" text="aideText" wrapText="true" />
+              </children>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+      </children>
+    </VBox>
+  </children>
+  <stylesheets>
+    <URL value="@../application.css" />
+  </stylesheets>
+</AnchorPane>

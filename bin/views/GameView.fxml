@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane styleClass="background-white" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controllers.GameViewController">
+  <children>
+    <AnchorPane fx:id="anchorParent" layoutX="0.0" layoutY="0.0" prefHeight="528.0" prefWidth="655.0" style="-fx-background: rgba(255,255,255,255)">
+      <children>
+        <Rectangle arcHeight="0.0" arcWidth="0.0" fill="#ffffff8f" height="76.8984375" layoutX="0.0" layoutY="403.0" pickOnBounds="false" stroke="#00e0ff" strokeMiterLimit="10.0" strokeType="INSIDE" strokeWidth="1.6" width="657.0" />
+        <ImageView fitHeight="57.0" fitWidth="76.0" layoutX="94.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../assets/img/x.png" />
+          </image>
+        </ImageView>
+        <Text layoutX="292.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nulle" textAlignment="CENTER" wrappingWidth="65.3515625">
+          <font>
+            <Font name="DejaVu Sans Bold" size="24.0" />
+          </font>
+        </Text>
+        <Text fx:id="xWin" fill="#5d9ffe" layoutX="161.0" layoutY="444.0" scaleX="2.0629138190965297" scaleY="2.729800447489193" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="65.3515625">
+          <font>
+            <Font name="DejaVu Sans Bold" size="15.0" fx:id="x1" />
+          </font>
+        </Text>
+        <Text fx:id="draw" layoutX="294.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="65.3515625">
+          <font>
+            <Font name="DejaVu Sans Bold" size="30.0" />
+          </font>
+        </Text>
+        <HBox layoutX="2.0" layoutY="2.0" prefHeight="49.0" prefWidth="655.0" spacing="20.0">
+          <children>
+            <Button fx:id="easyButton" mnemonicParsing="false" onAction="#onChangeMode" prefHeight="49.0" prefWidth="110.5" styleClass="levelselect, selectionButton" text="Facile" />
+            <Button fx:id="mediumButton" mnemonicParsing="false" onAction="#onChangeMode" prefHeight="49.0" prefWidth="110.5" styleClass="levelselect, selectionButton" text="Moyen" />
+            <Button fx:id="hardButton" mnemonicParsing="false" onAction="#onChangeMode" prefHeight="49.0" prefWidth="104.0" style="" styleClass="levelselect, selectionButton, selected" text="Invincible">
+              <HBox.margin>
+                <Insets right="150.0" />
+              </HBox.margin>
+            </Button>
+            <Button fx:id="twoPlayersButton" mnemonicParsing="false" onAction="#onChangeMode" prefHeight="49.0" prefWidth="115.0" style="&#10;&#10;" styleClass="levelselect, selectionButton" text="2 Joueurs" />
+          </children>
+        </HBox>
+        <Rectangle arcHeight="17.0" arcWidth="17.0" fill="#ffffffaa" height="201.8477783203125" layoutX="188.0" layoutY="119.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="263.99798583984375" />
+        <ImageView fitHeight="5.0" fitWidth="263.99798583984375" layoutX="187.0" layoutY="253.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@../assets/img/bar.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="5.0" fitWidth="201.8477635383606" layoutX="264.0" layoutY="217.0" pickOnBounds="true" preserveRatio="false" rotate="90.0">
+          <image>
+            <Image url="@../assets/img/bar.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="5.0" fitWidth="264.0" layoutX="188.0" layoutY="187.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@../assets/img/bar.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="5.0" fitWidth="200.03573560714722" layoutX="175.0" layoutY="217.0" pickOnBounds="true" preserveRatio="false" rotate="90.0">
+          <image>
+            <Image url="@../assets/img/bar.png" />
+          </image>
+        </ImageView>
+        <GridPane fx:id="grille" disable="false" focusTraversable="false" gridLinesVisible="false" layoutX="187.0" layoutY="122.0" prefHeight="199.0" prefWidth="264.0" style="" visible="true">
+          <children>
+            <Pane id="case" disable="false" focusTraversable="false" onMouseClicked="#onCaseClick" opacity="1.0" prefHeight="59.0" prefWidth="88.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Pane id="case" onMouseClicked="#onCaseClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Pane id="case" onMouseClicked="#onCaseClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Pane id="case" onMouseClicked="#onCaseClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Pane id="case" onMouseClicked="#onCaseClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Pane id="case" onMouseClicked="#onCaseClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Pane id="case" onMouseClicked="#onCaseClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Pane id="case" onMouseClicked="#onCaseClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Pane id="case" onMouseClicked="#onCaseClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <ImageView fx:id="line35" fitHeight="8.0" fitWidth="263.9980163574219" layoutX="188.0" layoutY="219.0" pickOnBounds="true" preserveRatio="false" rotate="0.0" visible="false">
+          <image>
+            <Image url="@../assets/img/xWinLine.png" />
+          </image>
+        </ImageView>
+        <ImageView fx:id="line02" fitHeight="8.0" fitWidth="263.9979553222656" layoutX="188.0" layoutY="151.0" pickOnBounds="true" preserveRatio="false" rotate="0.0" visible="false">
+          <image>
+            <Image url="@../assets/img/xWinLine.png" />
+          </image>
+        </ImageView>
+        <ImageView fx:id="line68" fitHeight="8.0" fitWidth="263.9979553222656" layoutX="188.0" layoutY="284.0" pickOnBounds="true" preserveRatio="false" rotate="0.0" visible="false">
+          <image>
+            <Image url="@../assets/img/xWinLine.png" />
+          </image>
+        </ImageView>
+        <ImageView fx:id="line26" fitHeight="8.0" fitWidth="296.56423234939575" layoutX="172.0" layoutY="218.0" pickOnBounds="true" preserveRatio="false" rotate="144.0" visible="false">
+          <image>
+            <Image url="@../assets/img/xWinLine.png" />
+          </image>
+        </ImageView>
+        <ImageView fx:id="line17" fitHeight="8.0" fitWidth="198.9979705810547" layoutX="221.0" layoutY="215.0" pickOnBounds="true" preserveRatio="false" rotate="90.0" visible="false">
+          <image>
+            <Image url="@../assets/img/xWinLine.png" />
+          </image>
+        </ImageView>
+        <ImageView fx:id="line08" fitHeight="8.0" fitWidth="296.56423234939575" layoutX="171.0" layoutY="219.0" pickOnBounds="true" preserveRatio="false" rotate="217.0" visible="false">
+          <image>
+            <Image url="@../assets/img/xWinLine.png" />
+          </image>
+        </ImageView>
+        <ImageView fx:id="line06" fitHeight="8.0" fitWidth="198.9979705810547" layoutX="133.0" layoutY="218.0" pickOnBounds="true" preserveRatio="false" rotate="90.0" visible="false">
+          <image>
+            <Image url="@../assets/img/xWinLine.png" />
+          </image>
+        </ImageView>
+        <ImageView fx:id="line28" fitHeight="8.0" fitWidth="198.9979705810547" layoutX="308.0" layoutY="217.0" pickOnBounds="true" preserveRatio="false" rotate="90.0" visible="false">
+          <image>
+            <Image url="@../assets/img/xWinLine.png" />
+          </image>
+        </ImageView>
+        <Text fx:id="oWin" fill="#f3af3d" font="$x1" layoutX="427.0" layoutY="444.0" scaleX="2.016587409062936" scaleY="2.729800447489193" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="65.3515625" />
+        <ImageView fitHeight="57.0" fitWidth="76.0" layoutX="504.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../assets/img/o.png" />
+          </image>
+        </ImageView>
+        <Text id="youWinText" fx:id="oWinText" fill="linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, 0xfff733ff 0.0%, 0xffe700ff 50.0%, 0xfff733ff 100.0%)" layoutX="207.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="1.3" style="" text="O GAGNE !" visible="false">
+          <font>
+            <Font name="Arial Black" size="42.0" fx:id="x7" />
+          </font>
+          <stroke>
+            <Color blue="0.000" green="0.722" red="1.000" fx:id="x5" />
+          </stroke>
+        </Text>
+        <Text id="youWinText" fx:id="xWinText" fill="linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, 0xfff733ff 0.0%, 0xffe700ff 50.0%, 0xfff733ff 100.0%)" font="$x7" layoutX="190.0" layoutY="238.0" stroke="$x5" strokeType="OUTSIDE" strokeWidth="1.3" style="" text="X GAGNE !" visible="false" />
+        <Text fx:id="youWinText" fill="linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, 0xfff733ff 0.0%, 0xffe700ff 50.0%, 0xfff733ff 100.0%)" font="$x7" layoutX="110.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="1.3" style="" text="VOUS AVEZ GAGNÉ !" visible="false">
+          <stroke>
+            <Color blue="0.000" green="0.720" red="1.000" fx:id="x6" />
+          </stroke>
+        </Text>
+        <Text id="youWinText" fx:id="youLoseText" fill="linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, 0xff0000ff 0.0%, 0xff6666ff 50.0%, 0xff0000ff 100.0%)" font="$x7" layoutX="232.0" layoutY="242.0" smooth="true" stroke="RED" strokeType="OUTSIDE" strokeWidth="1.3" style="" text="PERDU !" visible="false" />
+        <Text id="youWinText" fx:id="drawText" fill="linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, 0xbfbfbfff 0.0%, 0xefefefff 50.0%, 0xbfbfbfff 100.0%)" layoutX="119.0" layoutY="244.0" stroke="#9f9f9f" strokeType="OUTSIDE" strokeWidth="1.3" style="" text="PARTIE NULLE !" visible="false">
+          <font>
+            <Font name="Arial Black" size="50.0" />
+          </font>
+        </Text>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@../application.css" />
+  </stylesheets>
+</AnchorPane>
